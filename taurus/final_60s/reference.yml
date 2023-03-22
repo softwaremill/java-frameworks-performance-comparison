@@ -1,0 +1,16 @@
+---
+execution:
+- concurrency: 50
+  hold-for: 60s
+  ramp-up: 60s
+  scenario: Thread Group
+modules:
+  console:
+    disable: true
+scenarios:
+  Thread Group:
+    requests:
+    - label: reference
+      method: GET
+      url: http://172.20.101.254:8080/redis/test
+

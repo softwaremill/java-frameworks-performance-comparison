@@ -1,0 +1,12 @@
+---
+execution:
+- concurrency: 300 
+  hold-for: 480s
+  ramp-up: 60s
+  scenario: Thread Group
+scenarios:
+  Thread Group:
+    requests:
+    - label: blocking
+      method: GET
+      url: http://172.20.101.254:8080/redis/blocking

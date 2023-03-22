@@ -1,0 +1,25 @@
+Performance measurements obtained for applications running in single vCPU, 4GB RAM VM. Measurements were obtained with aid of Taurus automation framework running in 6 vCPU, elastic RAM VM.
+
+//----------------------
+File naming:
+	<framework>_<http_interface>_<db_interface>_<tool>_<measurements_nr>
+example:
+	Spring_blocking_blocking_jmc_1
+options:
+	<framework> - Spring / Micronaut / Quarkus
+	<http_interface> - blocking / reactive
+	<db_interface> - blocking / reactive / reference
+	<tool> - taurus / jmc
+	<measurements_nr> - 1 / 2
+
+meaning:
+	Taurus - automation framework for running load testing tools - in this case JMeter.
+	JMC (JavaMissionControl) - tools suite for JVM. Here used for gathering data about application, and creating graphs.
+	blocking - typical blocking interface. Single thread corresponds to single http request. In that case query to db is blocking.
+	reactive - non-blocking interface. Few threads serve all requests. In all descriptions found online it is described as event loop.
+	reference - no db request for http requests. In this case request returned predefined string
+
+
+
+
+
